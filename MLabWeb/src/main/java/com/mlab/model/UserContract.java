@@ -15,7 +15,8 @@ public class UserContract implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
 	//bi-directional many-to-one association to Contract
 	@ManyToOne
@@ -27,12 +28,18 @@ public class UserContract implements Serializable {
 
 	public UserContract() {
 	}
+	
+	public UserContract(Contract contract, User user) {
+		super();
+		this.contract = contract;
+		this.user = user;
+	}
 
-	public int getId() {
+	public Long getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

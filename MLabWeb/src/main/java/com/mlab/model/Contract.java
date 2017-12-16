@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 @Entity
 @NamedQuery(name="Contract.findAll", query="SELECT c FROM Contract c")
@@ -27,6 +28,9 @@ public class Contract implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="contract_owner")
 	private User user;
+	
+	@Transient
+	private Long userId;
 
 	//bi-directional many-to-one association to UserContract
 	@OneToMany(mappedBy="contract", fetch=FetchType.EAGER)
@@ -62,6 +66,24 @@ public class Contract implements Serializable {
 	
 	private Double contractRating;
 	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public Long getUserId() {
+		return userId;
+	}
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+	public Set<UserContract> getUserContracts() {
+		return userContracts;
+	}
+	public void setUserContracts(Set<UserContract> userContracts) {
+		this.userContracts = userContracts;
+	}
 	public Long getId() {
 		return id;
 	}

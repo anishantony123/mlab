@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mlab.model.Contract;
 import com.mlab.model.User;
+import com.mlab.model.UserContract;
 import com.mlab.repository.ContractRepository;
+import com.mlab.repository.UserContractRepository;
 import com.mlab.repository.UserRepository;
 
 @RestController
@@ -23,17 +25,12 @@ public class LabourController {
 	
 	@Autowired
 	private ContractRepository contractRepository;
+	
+	@Autowired
+	private UserContractRepository ucRepository;
 
 	@RequestMapping(value = "/labour/user/add", method = RequestMethod.POST)
 	public User saveUSer(@RequestBody User newUser) {
-		
-		User user = null;
-		if(newUser != null && newUser.getId() != null){
-			user = userRepository.findOne(newUser.getId());
-			if(user != null){
-				newUser.setId(user.getId());
-			}
-		}		
 		return userRepository.save(newUser);
 	}
 
@@ -45,22 +42,25 @@ public class LabourController {
 	@RequestMapping(value = "/labour/contract/add", method = RequestMethod.POST)
 	public Contract saveContact(@RequestBody Contract newContract) {
 		
-		Contract contract = null;
+		User u = userRepository.findOne(newContract.getUserId());
+		newContract.setUser(u);
+		Contract c = contractRepository.save(newContract);
+		UserContract uc = new UserContract(c,u);
+		ucRepository.save(uc);
+		return c;
 		
-		if(newContract != null && newContract.getId() != null){
-			contract = (Contract) contractRepository.findOne(newContract.getId());
-			
-			if(contract != null){
-				newContract.setId(contract.getId());
-			}
-		}
-		
-		return contractRepository.save(newContract);
 	}
 
 	@RequestMapping(value = "/labour/contract/{username}", method = RequestMethod.GET)
 	public List<Contract> getContract(@PathVariable(name = "username") String username) {
-		return contractRepository.findByUserContractsUserUsername(username);
+		User u = userRepository.findByUsername(username);
+
+		List<Contract> contracts = contractRepository.findByUserContractsUserUsername(username);
+		for(Contract c : contracts){
+			c.setUser(u);
+			c.setUserId(u.getId());
+		}
+		return contracts;
 	}
 	
 }
