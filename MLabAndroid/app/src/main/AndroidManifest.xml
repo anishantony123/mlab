@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".FacebookLoginActivity">
+        <!--<activity android:name=".FacebookLoginActivity">-->
+        <activity android:name=".HomePageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +21,13 @@
         <activity android:name=".AuthenticationRequestActivity"></activity>
         <activity android:name=".AuthenticationResponseActivity"></activity>
         <activity android:name=".ChooseLanguageActivity"></activity>
-        <activity android:name=".HomePageActivity"></activity>
+        <!--<activity android:name=".HomePageActivity"></activity>-->
+        <activity
+            android:name=".AboutUsActivity"
+            android:label="@string/activity_title_about_us" />
+        <activity
+            android:name=".PrivacyPolicyActivity"
+            android:label="@string/activity_title_privacy_policy" />
         <meta-data android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id"/>
     </application>

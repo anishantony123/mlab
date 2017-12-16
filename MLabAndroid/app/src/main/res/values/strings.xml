@@ -2,4 +2,76 @@
     <string name="app_name">MLabAndroid</string>
     <string name="facebook_app_id">2011815005729827</string>
     <string name="action_settings">Settings</string>
+    <string-array name="gender_arrays">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string name="country_prompt">Choose a country</string>
+    <string-array name="residential_area_arrays">
+        <item>Kakkanad</item>
+        <item>Vazhakkala</item>
+        <item>Infopark Phase 1</item>
+        <item>Infopark Phase 2</item>
+        <item>Chembumukku</item>
+        <item>Vallathol</item>
+        <item>HMT Junction</item>
+        <item>Medical College</item>
+        <item>Edachira</item>
+    </string-array>
+    <string-array name="working_hrs_arrays">
+        <item>Anytime</item>
+        <item>Only Daytime</item>
+        <item>Only Evening</item>
+    </string-array>
+    <string-array name="working_days_arrays">
+        <item>All Days</item>
+        <item>Mon - Fri</item>
+        <item>Sat-Sun</item>
+    </string-array>
+    <string-array name="health_issue_arrays">
+        <item>Nothing</item>
+        <item>Dust Allergies</item>
+        <item>Sunburn</item>
+        <item>Acrophobia</item>
+    </string-array>
+
+    <string-array name="yes_no">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+    <string-array name="experiance_arrays">
+        <item>Waste Picker</item>
+        <item>General Labourer</item>
+        <item>Furniture Removal</item>
+        <item>Meat Processing</item>
+        <item>Construction Works</item>
+        <item>Delivery Driver</item>
+        <item>Painting</item>
+    </string-array>
+    <string-array name="nav_item_activity_titles">
+        <item>Home</item>
+        <item>Photos</item>
+        <item>Movies</item>
+        <item>Notifications</item>
+        <item>Settings</item>
+    </string-array>
+    <string name="activity_title_about_us">About Us</string>
+    <string name="activity_title_privacy_policy">Privacy Policy</string>
+    <string name="action_clear_all">Clear All</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_mark_all_read">Mark All as Read</string>
+    <string name="privacy_policy">Privacy Policy</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+
+    <!-- Navigation Drawer menu labels -->
+    <string name="job_calendar">Job Calendar</string>
+    <string name="apply_job">Apply Job</string>
+    <string name="accept_job">Accept Job</string>
+    <string name="rate_job">Rate Job</string>
+    <string name="compliants">Compliants</string>
+    <string name="nav_about_us">About Us</string>
 </resources>
