@@ -1,51 +1,101 @@
 package com.mlab.model;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 @Entity
-public class User {
+@NamedQuery(name="User.findAll", query="SELECT u FROM User u")
+public class User implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long userId;
+	private Long id;
 	
 	private String username;//an  identifier
+	
 	private String emailAddress;
+	
 	private String mobileNumber;
+	
 	private String mobileOTP;
+	
 	private Boolean emailVerified;
+	
 	private String preferredLanguage;
+	
 	private String gender;
+	
 	private String currentResidentialAddress;
+	
 	private String residentialArea;
+	
 	private String preferredWorkingHours;
+	
 	private String preferredWorkingDays;
+	
 	private String healthIssues;
+	
 	private Boolean needTravelfacility;
+	
 	private Boolean knowDriving;
+	
 	private String experianceIn;
+	
 	private String labourExperiance;
+	
 	private Date dateOfbirth;
+	
 	private Integer additionType;//just steps
+	
 	private Date createdDate;
+	
 	private Date updatedDate;
+	
 	private Double rating;//shows rating out of 10
+	
 	private Long noOfRatedPerson;//show the count
+	
 	private String userType;//Owner or Labour
+	
 	private Long totalJobsApplied;//only for labours
+	
 	private Long totalJobsPublished;//only for owners
 	
-	
-	public long getUserId() {
-		return userId;
+	//bi-directional many-to-one association to Contract
+	@OneToMany(mappedBy="user", fetch=FetchType.EAGER)
+	private Set<Contract> contracts;
+
+	//bi-directional many-to-one association to UserContract
+	@OneToMany(mappedBy="user", fetch=FetchType.EAGER)
+	private Set<UserContract> userContracts;
+		
+	public Long getId() {
+		return id;
 	}
-	public void setUserId(long userId) {
-		this.userId = userId;
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public Set<Contract> getContracts() {
+		return contracts;
+	}
+	public void setContracts(Set<Contract> contracts) {
+		this.contracts = contracts;
+	}
+	public Set<UserContract> getUserContracts() {
+		return userContracts;
+	}
+	public void setUserContracts(Set<UserContract> userContracts) {
+		this.userContracts = userContracts;
 	}
 	public String getUsername() {
 		return username;

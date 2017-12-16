@@ -8,6 +8,6 @@ import com.mlab.model.User;
 @RepositoryRestResource
 public interface UserRepository extends CrudRepository<User, Long> {
 
-	public User findByUsername(String userName);
+	public User findByUsername(String username);
 
 }
