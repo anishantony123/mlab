@@ -40,6 +40,8 @@
             android:id="@+id/gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:entries="@array/gender_arrays"
             android:prompt="@string/country_prompt" />
 
@@ -80,6 +82,8 @@
             android:id="@+id/residentialArea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:entries="@array/residential_area_arrays"
             android:prompt="@string/country_prompt" />
 
@@ -87,6 +91,8 @@
             android:id="@+id/preferedWorkingHrs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:entries="@array/working_hrs_arrays"
             android:prompt="@string/country_prompt" />
 
@@ -94,6 +100,8 @@
             android:id="@+id/preferedWorkingDays"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:entries="@array/working_days_arrays"
             android:prompt="@string/country_prompt" />
 
@@ -101,6 +109,8 @@
             android:id="@+id/healthIssues"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:entries="@array/health_issue_arrays"
             android:prompt="@string/country_prompt" />
 
@@ -108,20 +118,26 @@
             android:id="@+id/needTravelFacility"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/yes_no"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:entries="@array/need_travel"
             android:prompt="@string/country_prompt" />
 
         <Spinner
             android:id="@+id/know_driving"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/yes_no"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:entries="@array/know_driving_value"
             android:prompt="@string/country_prompt" />
 
         <Spinner
             android:id="@+id/your_experiance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:entries="@array/experiance_arrays"
             android:prompt="@string/country_prompt" />
 
@@ -138,7 +154,7 @@
                 android:id="@+id/remarks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Current Residential Address" />
+                android:hint="Remarks" />
 
         </android.support.design.widget.TextInputLayout>
 

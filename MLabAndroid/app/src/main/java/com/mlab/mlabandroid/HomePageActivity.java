@@ -117,8 +117,8 @@ public class HomePageActivity  extends AppCompatActivity {
      */
     private void loadNavHeader() {
         // name, website
-        txtName.setText("Ravi Tamada");
-        txtWebsite.setText("www.androidhive.info");
+        txtName.setText("Anish Antony");
+        txtWebsite.setText("www.mlab.com");
 
         // loading header background image
         Glide.with(this).load(urlNavHeaderBg)

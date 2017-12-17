@@ -24,7 +24,7 @@ public class AuthenticationResponseActivity extends AppCompatActivity {
 
                 // Start NewActivity.class
                 Intent authenticationResponse = new Intent(AuthenticationResponseActivity.this,
-                        HomePageActivity.class);
+                        ChooseLanguageActivity.class);
                 startActivity(authenticationResponse);
             }
         });

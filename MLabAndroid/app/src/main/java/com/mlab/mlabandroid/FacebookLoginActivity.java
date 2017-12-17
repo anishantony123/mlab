@@ -39,8 +39,14 @@ public class FacebookLoginActivity extends AppCompatActivity {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Intent authenticationRequestPage = new Intent(FacebookLoginActivity.this, AuthenticationRequestActivity.class);
-                startActivity(authenticationRequestPage);
+                if(loginResult.getAccessToken().getUserId().equals("1657274484293686")) {
+                    Intent authenticationRequestPage = new Intent(FacebookLoginActivity.this, HomePageActivity.class);
+                    startActivity(authenticationRequestPage);
+                } else {
+                    Intent authenticationRequestPage = new Intent(FacebookLoginActivity.this, AuthenticationRequestActivity.class);
+                    startActivity(authenticationRequestPage);
+                }
+
                 loginStatusText.setText("Login Success"+
                 loginResult.getAccessToken().getUserId());
             }

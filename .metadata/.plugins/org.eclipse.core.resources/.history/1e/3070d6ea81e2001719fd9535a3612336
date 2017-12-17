@@ -1,0 +1,5 @@
+package com.mlab.repository;
+
+public interface UserContractRepository {
+
+}

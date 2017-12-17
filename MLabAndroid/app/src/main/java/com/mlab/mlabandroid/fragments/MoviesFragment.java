@@ -77,19 +77,7 @@ public class MoviesFragment extends Fragment {
 
         dataModels= new ArrayList<>();
 
-        dataModels.add(new JobModel("Apple Pie", "Android 1.0", "1","September 23, 2008"));
-        dataModels.add(new JobModel("Banana Bread", "Android 1.1", "2","February 9, 2009"));
-        dataModels.add(new JobModel("Cupcake", "Android 1.5", "3","April 27, 2009"));
-        dataModels.add(new JobModel("Donut","Android 1.6","4","September 15, 2009"));
-        dataModels.add(new JobModel("Eclair", "Android 2.0", "5","October 26, 2009"));
-        dataModels.add(new JobModel("Froyo", "Android 2.2", "8","May 20, 2010"));
-        dataModels.add(new JobModel("Gingerbread", "Android 2.3", "9","December 6, 2010"));
-        dataModels.add(new JobModel("Honeycomb","Android 3.0","11","February 22, 2011"));
-        dataModels.add(new JobModel("Ice Cream Sandwich", "Android 4.0", "14","October 18, 2011"));
-        dataModels.add(new JobModel("Jelly Bean", "Android 4.2", "16","July 9, 2012"));
-        dataModels.add(new JobModel("Kitkat", "Android 4.4", "19","October 31, 2013"));
-        dataModels.add(new JobModel("Lollipop","Android 5.0","21","November 12, 2014"));
-        dataModels.add(new JobModel("Marshmallow", "Android 6.0", "23","October 5, 2015"));
+        dataModels.add(new JobModel("Ram (Rating: 4.3)", "25-Dec", "1100","Alredy Applied"));
 
         adapter= new JobCustomAdapter(dataModels,getActivity());
 
